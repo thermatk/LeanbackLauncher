@@ -347,16 +347,7 @@ class HomeScreenAdapter(
                     mSearch = view as SearchOrbView
                     mSearch?.let {
                         mAppsManager?.setSearchPackageChangeListener(it, it.searchPackageName)
-                        if (it.isKatnissPackagePresent) {
-                            it.showSearch()
-                            it.updateAssistantIcon(mAssistantIcon)
-                            it.updateSearchSuggestions(mAssistantSuggestions)
-                        } else {
-                            if (it.isAssistPackagePresent)
-                                it.showSearch()
-                            else
-                                it.hideSearch()
-                        }
+                        it.hideSearch()
                     }
                 }
                 RowType.NOTIFICATIONS -> {
